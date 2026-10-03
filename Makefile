@@ -77,8 +77,8 @@ demo-source: prepare-demo
 .PHONY: docs
 docs: prepare-demo
 	@echo "Building CometVisu documentation..."
-	@cd $(DEMO_SOURCE) && ./cv doc -l de --target ../$(DOCS_TARGET)/de -f
-	@cd $(DEMO_SOURCE) && ./cv doc -l en --target ../$(DOCS_TARGET)/en -f
+	@cd $(DEMO_SOURCE) && ./cv doc -l de --target ../$(DOCS_TARGET)/de -f --doc-dir ../$(DOCS_TARGET)
+	@cd $(DEMO_SOURCE) && ./cv doc -l en --target ../$(DOCS_TARGET)/en -f --doc-dir ../$(DOCS_TARGET)
 	@echo "✓ Documentation built successfully"
 
 # Build the Hugo website
