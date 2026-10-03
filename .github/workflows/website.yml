@@ -66,6 +66,9 @@ jobs:
           CV_VERSION=$VERSION npx qx deploy --clean -t build --set apiviewer=true -f=false -o ../static/api
           ./cv doc --process-versions --doc-dir ../static/docs/
 
+      - name: Fix documentation navigation links for GitHub Pages
+        run: python3 scripts/fix_docs_navigation.py static/docs
+
       - name: Resolve documentation version symlinks
         # `cv doc --process-versions` creates real symlinks (e.g. static/docs/de/latest -> 1.0)
         # to point "latest"/"develop" at the current version directory. Newer Hugo releases
