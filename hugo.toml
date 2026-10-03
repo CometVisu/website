@@ -58,3 +58,11 @@ title = 'CometVisu - Smarthome Visualization'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[module]
+  [[module.mounts]]
+    source = "static/docs/de/1.0"
+    target = "static/docs/de/latest"
+  [[module.mounts]]
+    source = "static/docs/en/1.0"
+    target = "static/docs/en/latest"

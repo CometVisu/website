@@ -120,7 +120,6 @@
       "hero-showcase",
       "hero-subtitle",
       "hero-title",
-      "highlight",
       "lang-switch",
       "legal-content",
       "level-card",
@@ -149,14 +148,6 @@
       "yellow"
     ],
     "ids": [
-      "1-create-the-files",
-      "1-dateien-anlegen",
-      "2-add-front-matter",
-      "2-frontmatter-ausfüllen",
-      "3-inhalt-schreiben",
-      "3-write-the-content",
-      "4-lokal-testen",
-      "4-preview-locally",
       "angaben-gemäß--5-tmg",
       "backends",
       "contact",
