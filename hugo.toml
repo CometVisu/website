@@ -13,16 +13,16 @@ title = 'CometVisu - Smarthome Visualization'
 
 [languages]
   [languages.en]
-    label = "English"
     weight = 1
     title = "CometVisu - Smarthome Visualization"
     [languages.en.params]
+      label = "English"
       description = "Flexible, customizable smarthome visualization for KNX, OpenHAB and more"
   [languages.de]
-    label = "Deutsch"
     weight = 2
     title = "CometVisu - Smarthome Visualisierung"
     [languages.de.params]
+      label = "Deutsch"
       description = "Flexible, anpassbare Smarthome-Visualisierung für KNX, OpenHAB und mehr"
 
 [menu]
