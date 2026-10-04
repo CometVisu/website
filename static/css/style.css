@@ -1741,6 +1741,7 @@ section {
     font-size: 0.95rem;
     flex: 1;
     margin-bottom: 16px;
+    overflow-wrap: break-word;
 }
 
 .blog-read-more {

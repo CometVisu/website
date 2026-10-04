@@ -27,6 +27,8 @@ def fix_anchor(anchor: str, homepage_href: str) -> str:
 
     if "cv-nav-logo" in classes:
         fixed_href = f"{href}/../../"
+    elif "cv-nav-news" in classes:
+        fixed_href = f"{homepage_href}news/"
     elif "cv-lang-switch" in classes:
         match = LANGUAGE_LINK_RE.fullmatch(href)
         if match is None:
