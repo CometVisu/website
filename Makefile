@@ -80,8 +80,8 @@ demo-source: prepare-demo
 .PHONY: docs
 docs: prepare-demo
 	@echo "Building CometVisu documentation..."
-	@cd $(DEMO_SOURCE) && ./cv doc -l de --target-version=${VERSION_PATH} -f --doc-dir ../$(DOCS_TARGET)
-	@cd $(DEMO_SOURCE) && ./cv doc -l en --target-version=${VERSION_PATH} -f --doc-dir ../$(DOCS_TARGET)
+	@cd $(DEMO_SOURCE) && ./cv doc -l de --target-version=${VERSION_PATH} -f -c --doc-dir ../$(DOCS_TARGET)
+	@cd $(DEMO_SOURCE) && ./cv doc -l en --target-version=${VERSION_PATH} -f -c --doc-dir ../$(DOCS_TARGET)
 	@cd $(DEMO_SOURCE) && ./cv doc --process-versions --doc-dir ../$(DOCS_TARGET)
 	@echo "✓ Documentation built successfully"
 
