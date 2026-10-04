@@ -1,4 +1,5 @@
 import os
+import posixpath
 import re
 import sys
 from pathlib import Path
@@ -13,10 +14,10 @@ NAV_RE = re.compile(
     r'(</nav\s*>)',
     re.IGNORECASE | re.DOTALL,
 )
-LANGUAGE_LINK_RE = re.compile(r'^(.*?)(?:\.\./)(en|de)/$')
+LANGUAGE_LINK_RE = re.compile(r'^(.*?)(?:\.\./)(en|de)/.*$')
 
 
-def fix_anchor(anchor: str, homepage_href: str) -> str:
+def fix_anchor(anchor: str, homepage_href: str, root: Path, relative_path: Path) -> str:
     class_match = CLASS_RE.search(anchor)
     href_match = HREF_RE.search(anchor)
     if href_match is None:
@@ -26,15 +27,37 @@ def fix_anchor(anchor: str, homepage_href: str) -> str:
     href = href_match.group(3)
 
     if "cv-nav-logo" in classes:
-        fixed_href = f"{href}/../../"
+        fixed_href = homepage_href
     elif "cv-nav-news" in classes:
         fixed_href = f"{homepage_href}news/"
     elif "cv-lang-switch" in classes:
         match = LANGUAGE_LINK_RE.fullmatch(href)
         if match is None:
             return anchor
-        prefix, language = match.groups()
-        fixed_href = f"{prefix}../../../{language}/latest/manual/"
+        language = match.group(2)
+        current_language = relative_path.parts[0]
+        current_page = Path(*relative_path.parts[1:])
+        if "manual" not in current_page.parts:
+            return anchor
+
+        manual_index = current_page.parts.index("manual")
+        manual_path = Path(*current_page.parts[manual_index:])
+        current_version_dir = root / current_language / current_page.parts[0]
+        version_path = current_page.parts[0]
+        for alias in ("latest", "develop"):
+            alias_path = root / current_language / alias
+            if alias_path.is_symlink() and alias_path.resolve() == current_version_dir.resolve():
+                version_path = alias
+                break
+
+        target_page = manual_path
+        target_root = root / language / version_path
+        if not (target_root / target_page).is_file():
+            target_page = Path("manual/index.html")
+
+        current_url_dir = Path(current_language) / version_path / manual_path.parent
+        target_url = Path(language) / version_path / target_page
+        fixed_href = posixpath.relpath(target_url.as_posix(), current_url_dir.as_posix())
     elif "#" in href:
         fixed_href = f"{homepage_href}#{href.partition('#')[2]}"
     else:
@@ -59,7 +82,7 @@ def fix_documentation_tree(root: Path) -> None:
 
         def fix_navigation(match: re.Match[str]) -> str:
             nav_content = ANCHOR_RE.sub(
-                lambda anchor: fix_anchor(anchor.group(), homepage_href),
+                lambda anchor: fix_anchor(anchor.group(), homepage_href, root, relative_path),
                 match.group(3),
             )
             return f"{match.group(1)}{nav_content}{match.group(4)}"

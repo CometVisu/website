@@ -9,6 +9,9 @@ DEMO_TARGET := static/demo
 DOCS_TARGET := static/docs
 NODE_VERSION := $(shell node --version 2>/dev/null)
 
+VERSION := $(shell cd $(DEMO_SOURCE) && ./cv doc --get-version)
+VERSION_PATH := $(shell cd $(DEMO_SOURCE) &&./cv doc --get-target-version)
+
 .DEFAULT_GOAL := build
 
 # Full build (demo + docs + website)
@@ -77,8 +80,9 @@ demo-source: prepare-demo
 .PHONY: docs
 docs: prepare-demo
 	@echo "Building CometVisu documentation..."
-	@cd $(DEMO_SOURCE) && ./cv doc -l de --target ../$(DOCS_TARGET)/de -f --doc-dir ../$(DOCS_TARGET)
-	@cd $(DEMO_SOURCE) && ./cv doc -l en --target ../$(DOCS_TARGET)/en -f --doc-dir ../$(DOCS_TARGET)
+	@cd $(DEMO_SOURCE) && ./cv doc -l de --target-version=${VERSION_PATH} -f --doc-dir ../$(DOCS_TARGET)
+	@cd $(DEMO_SOURCE) && ./cv doc -l en --target-version=${VERSION_PATH} -f --doc-dir ../$(DOCS_TARGET)
+	@cd $(DEMO_SOURCE) && ./cv doc --process-versions --doc-dir ../$(DOCS_TARGET)
 	@echo "✓ Documentation built successfully"
 
 # Build the Hugo website
