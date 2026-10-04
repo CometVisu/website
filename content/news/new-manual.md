@@ -9,5 +9,5 @@ translationKey: "news-new-manual"
 ---
 
 The CometVisu project is currently reworking the homepage and the manaual.
-A first preview can be seen at [www.cometvisu.org](http://www.cometvisu.org/CometVisu/de/manual/).
+A first preview can be seen at [www.cometvisu.org](http://www.cometvisu.org/docs/de/latest/manual/).
 

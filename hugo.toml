@@ -1,4 +1,4 @@
-baseURL = 'https://cometvisu.github.io/'
+baseURL = 'https://www.cometvisu.org'
 locale = 'en'
 defaultContentLanguage = 'en'
 title = 'CometVisu - Smarthome Visualization'
@@ -9,7 +9,7 @@ title = 'CometVisu - Smarthome Visualization'
   githubRepo = "https://github.com/CometVisu/CometVisu"
   # Version path depends on CometVisu submodule branch: "latest" for master, "develop" for develop
   versionPath = "develop"
-  docsBaseUrl = "https://www.cometvisu.org/CometVisu"
+  docsBaseUrl = "https://www.cometvisu.org"
 
 [languages]
   [languages.en]
@@ -44,7 +44,7 @@ title = 'CometVisu - Smarthome Visualization'
     weight = 4
   [[menu.main]]
     name = "Dokumentation"
-    url = "https://www.cometvisu.org/CometVisu/de/latest/manual"
+    url = "https://www.cometvisu.org/docs/en/latest/manual/"
     weight = 5
   [[menu.main]]
     name = "GitHub"

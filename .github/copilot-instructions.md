@@ -48,12 +48,12 @@ Key parameters:
 - `versionPath`: Determines the documentation version path
   - `"develop"` for develop branch
   - `"latest"` for master branch
-- `docsBaseUrl`: Base URL for CometVisu documentation (`https://www.cometvisu.org/CometVisu`)
+- `docsBaseUrl`: Base URL for CometVisu documentation (`https://www.cometvisu.org/`)
 
 ```toml
 [params]
   versionPath = "develop"  # or "latest" for master branch
-  docsBaseUrl = "https://www.cometvisu.org/CometVisu"
+  docsBaseUrl = "https://www.cometvisu.org/"
 ```
 
 ### Version Path Mapping

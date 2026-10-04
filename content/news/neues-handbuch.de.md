@@ -9,6 +9,6 @@ translationKey: "news-new-manual"
 ---
 
 Das CometVisu Projekt überarbeitet zur Zeit die Homepage und die Handbücher.
-Einen ersten Blick kann man unter [www.cometvisu.org](http://www.cometvisu.org/CometVisu/de/manual/)
+Einen ersten Blick kann man unter [www.cometvisu.org](http://www.cometvisu.org/docs/de/latest/manual/)
 auf das neue Handbuch werfen.
 
