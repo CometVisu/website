@@ -15,7 +15,7 @@
         <ul class="nav-menu">
             <li><a href="{{ "" | relLangURL }}#features">Features</a></li>
             <li><a href="{{ "" | relLangURL }}#customization">{{ if $isDE }}Anpassung{{ else }}Customization{{ end }}</a></li>
-            <li><a href="{{ "blog/" | relLangURL }}">Blog</a></li>
+            <li><a href="{{ "news/" | relLangURL }}">{{ if $isDE }}Aktuelles{{ else }}News{{ end }}</a></li>
             <li><a href="{{ (printf "docs/%s/latest/manual/" $lang) | relURL }}">{{ if $isDE }}Dokumentation{{ else }}Documentation{{ end }}</a></li>
             <li><a href="https://github.com/CometVisu/CometVisu" target="_blank" rel="noopener">GitHub</a></li>
             <li class="nav-lang">

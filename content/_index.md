@@ -37,8 +37,6 @@ customization:
               color: "#ffb347"
             - name: "Metal"
               color: "#808080"
-            - name: "Planet"
-              color: "#4a90d9"
     - number: 2
       title: "Change Color Scheme"
       text: "Customize the entire appearance with just a few CSS variables"

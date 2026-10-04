@@ -39,8 +39,8 @@ title = 'CometVisu - Smarthome Visualization'
     url = "#demo"
     weight = 3
   [[menu.main]]
-    name = "Blog"
-    url = "blog/"
+    name = "Aktuelles"
+    url = "news/"
     weight = 4
   [[menu.main]]
     name = "Dokumentation"

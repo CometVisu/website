@@ -37,8 +37,6 @@ customization:
               color: "#ffb347"
             - name: "Metal"
               color: "#808080"
-            - name: "Planet"
-              color: "#4a90d9"
     - number: 2
       title: "Farbschema ändern"
       text: "Mit wenigen CSS-Variablen das komplette Erscheinungsbild anpassen"

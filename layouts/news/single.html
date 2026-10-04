@@ -3,10 +3,10 @@
 {{- $isDE := eq $lang "de" -}}
 {{ partial "navbar.html" . }}
 
-<!-- Blog Post -->
+<!-- News Article -->
 <article class="blog-post">
     <div class="container blog-post-container">
-        <a href="{{ "blog/" | relLangURL }}" class="blog-back-link">&larr; {{ if $isDE }}Zurück zum Blog{{ else }}Back to blog{{ end }}</a>
+        <a href="{{ "news/" | relLangURL }}" class="blog-back-link">&larr; {{ if $isDE }}Zurück zu Aktuelles{{ else }}Back to News{{ end }}</a>
 
         <header class="blog-post-header">
             {{ with .Params.category }}<span class="blog-badge">{{ . }}</span>{{ end }}

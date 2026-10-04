@@ -7,7 +7,7 @@
 <section class="blog-hero">
     <div class="container">
         <h1 class="section-title">{{ .Title }}</h1>
-        <p class="section-subtitle">{{ if $isDE }}Alle Themen im Blog{{ else }}All topics on the blog{{ end }}</p>
+        <p class="section-subtitle">{{ if $isDE }}Alle Themen im Bereich Aktuelles{{ else }}All topics in News{{ end }}</p>
     </div>
 </section>
 
@@ -23,7 +23,7 @@
         {{ else }}
         <p class="blog-empty">{{ if $isDE }}Es gibt noch keine Tags.{{ else }}There are no tags yet.{{ end }}</p>
         {{ end }}
-        <a class="blog-back-link" href="{{ "blog/" | relLangURL }}">&larr; {{ if $isDE }}Zurück zum Blog{{ else }}Back to blog{{ end }}</a>
+        <a class="blog-back-link" href="{{ "news/" | relLangURL }}">&larr; {{ if $isDE }}Zurück zu Aktuelles{{ else }}Back to News{{ end }}</a>
     </div>
 </section>
 
